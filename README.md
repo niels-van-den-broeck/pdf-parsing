@@ -13,3 +13,4 @@ TODO:
         - Optionally take in pdf or parse it by itself?
 - Make deployable with deployable Docker file
     - download binary in docker file instead of static binary
+- Unit Testing?
