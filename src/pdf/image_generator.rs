@@ -4,7 +4,7 @@ use pdfium_render::render_config::PdfRenderConfig;
 
 pub fn get_images_from_pdf(
     document: PdfDocument,
-    image_format: &ImageFormat,
+    image_format: ImageFormat,
     include_thumbnail: Option<bool>,
 ) {
     let render_config = PdfRenderConfig::new()
@@ -31,7 +31,7 @@ pub fn get_images_from_pdf(
                         index + 1,
                         image_format.extensions_str().first().unwrap()
                     ),
-                    *image_format,
+                    image_format,
                 )
                 .unwrap();
 
@@ -45,7 +45,7 @@ pub fn get_images_from_pdf(
                             index + 1,
                             image_format.extensions_str().first().unwrap()
                         ),
-                        *image_format,
+                        image_format,
                     )
                     .unwrap();
             }

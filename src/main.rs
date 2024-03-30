@@ -26,7 +26,7 @@ fn get_env_var(key: &str) -> String {
  * I have tried Jpeg but it gives weird output.
  */
 async fn export_pdf_to_images(
-    image_format: &image::ImageFormat,
+    image_format: image::ImageFormat,
     key: &String,
     include_thumbnail: Option<bool>,
 ) -> Result<(), PdfiumError> {
@@ -73,7 +73,7 @@ async fn main() {
     dotenv().ok();
 
     export_pdf_to_images(
-        &image_format,
+        image_format,
         &args.key,
         args.include_thumbnail.or_else(|| Some(false)),
     )
